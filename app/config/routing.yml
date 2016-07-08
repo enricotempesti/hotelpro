@@ -1,7 +1,7 @@
-app:
-    resource: "@AppBundle/Controller/"
+hotel_rooms_homepage:
+    resource: "@HotelRoomsBundle/Controller/"
     type:     annotation
-
+    prefix:   /
 #Sonata
 admin_area:
     resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"

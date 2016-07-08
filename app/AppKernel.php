@@ -41,6 +41,7 @@ class AppKernel extends Kernel
 
             // Application Bundles
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Hotel\Bundle\RoomsBundle\HotelRoomsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

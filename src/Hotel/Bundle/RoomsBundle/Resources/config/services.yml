@@ -1,0 +1,9 @@
+services:
+#    hotel_rooms.example:
+#        class: Hotel\Bundle\RoomsBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+    hotel_rooms.admin.camere:
+        class: Hotel\Bundle\RoomsBundle\Admin\camereAdmin
+        arguments: [~, Hotel\Bundle\RoomsBundle\Entity\camere, HotelRoomsBundle:camereAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: camere}
