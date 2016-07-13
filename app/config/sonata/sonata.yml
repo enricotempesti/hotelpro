@@ -24,6 +24,8 @@ doctrine:
                     SonataMediaBundle: ~
 
 sonata_media:
+    buzz:
+        connector:  sonata.media.buzz.connector.curl
     # if you don't use default namespace configuration
     #class:
     #    media: MyVendor\MediaBundle\Entity\Media
