@@ -22,6 +22,7 @@ class camereAdmin extends Admin
             ->add('fotocamera')
             ->add('fotocamera1')
             ->add('fotocamera2')
+            ->add('media')
         ;
     }
 
@@ -43,7 +44,8 @@ class camereAdmin extends Admin
                     'edit' => array(),
                     'delete' => array(),
                 )
-            ))
+            )) 
+             ->add('media', 'string', array('template' => 'SonataMediaBundle:MediaAdmin:list_image.html.twig'))
         ;
     }
 
@@ -66,6 +68,10 @@ class camereAdmin extends Admin
               )
             ->add('fotocamera1')
             ->add('fotocamera2')
+            ->add('media', 'sonata_media_type', array(
+                 'provider' => 'sonata.media.provider.image',
+                 'context'  => 'camere'
+            ))    
         ;
     }
 
@@ -81,6 +87,7 @@ class camereAdmin extends Admin
             ->add('fotocamera')
             ->add('fotocamera1')
             ->add('fotocamera2')
+            ->add('media')
         ;
     }
 }

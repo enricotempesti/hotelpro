@@ -3,11 +3,12 @@
 namespace Hotel\Bundle\RoomsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Sonata\MediaBundle\Model\MediaInterface;
 
 /**
  * camere
  *
- * @ORM\Table()
+ * @ORM\Table(name="camere")
  * @ORM\Entity(repositoryClass="Hotel\Bundle\RoomsBundle\Entity\camereRepository")
  */
 class camere
@@ -55,6 +56,12 @@ class camere
      * @ORM\Column(name="fotocamera2", type="string", length=255)
      */
     private $fotocamera2;
+    
+    /**
+     * @var \Application\Sonata\MediaBundle\Entity\Media
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, fetch="LAZY")
+     */
+    protected $media;
 
 
     /**
@@ -180,5 +187,21 @@ class camere
     public function getFotocamera2()
     {
         return $this->fotocamera2;
+    }
+    
+    /**
+     * @param MediaInterface $media
+     */
+    public function setMedia(MediaInterface $media)
+    {
+        $this->media = $media;
+    }
+
+    /**
+     * @return MediaInterface
+     */
+    public function getMedia()
+    {
+        return $this->media;
     }
 }
