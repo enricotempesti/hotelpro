@@ -19,10 +19,11 @@ class camereAdmin extends Admin
             ->add('id')
             ->add('numerocamera')
             ->add('tipocamera')
-            ->add('fotocamera')
-            ->add('fotocamera1')
-            ->add('fotocamera2')
             ->add('media')
+            ->add('media1')
+            ->add('media2')
+            ->add('media3')
+            
         ;
     }
 
@@ -35,9 +36,6 @@ class camereAdmin extends Admin
             ->add('id')
             ->add('numerocamera')
             ->add('tipocamera')
-            ->add('fotocamera')
-            ->add('fotocamera1')
-            ->add('fotocamera2')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -46,7 +44,10 @@ class camereAdmin extends Admin
                 )
             )) 
              ->add('media', 'string', array('template' => 'SonataMediaBundle:MediaAdmin:list_image.html.twig'))
-        ;
+             ->add('media1', 'string', array('template' => 'SonataMediaBundle:MediaAdmin:list_image.html.twig'))
+             ->add('media2', 'string', array('template' => 'SonataMediaBundle:MediaAdmin:list_image.html.twig'))
+             ->add('media3', 'string', array('template' => 'SonataMediaBundle:MediaAdmin:list_image.html.twig'))
+                ;
     }
 
     /**
@@ -57,19 +58,20 @@ class camereAdmin extends Admin
         $formMapper
             ->add('numerocamera')
             ->add('tipocamera')
-            ->add(
-                'fotocamera',
-                'ckeditor',
-                array(
-                  'config' => array(
-                    'toolbar' => 'full'
-                  )
-                )
-              )
-            ->add('fotocamera1')
-            ->add('fotocamera2')
             ->add('media', 'sonata_media_type', array(
                  'provider' => 'sonata.media.provider.image',
+                 'context'  => 'camere'
+            ))
+            ->add('media1', 'sonata_media_type', array(
+                 'provider' => 'sonata.media.provider.image',
+                 'context'  => 'camere'
+            ))
+            ->add('media2', 'sonata_media_type', array(
+                 'provider' => 'sonata.media.provider.image',
+                 'context'  => 'camere'
+            ))
+            ->add('media3', 'sonata_media_type', array(
+                 'provider' => 'sonata.media.provider.youtube',
                  'context'  => 'camere'
             ))    
         ;
@@ -84,10 +86,10 @@ class camereAdmin extends Admin
             ->add('id')
             ->add('numerocamera')
             ->add('tipocamera')
-            ->add('fotocamera')
-            ->add('fotocamera1')
-            ->add('fotocamera2')
             ->add('media')
+            ->add('media1')
+            ->add('media2')
+            ->add('media3')
         ;
     }
 }

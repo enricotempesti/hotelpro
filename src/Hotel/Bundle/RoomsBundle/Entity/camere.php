@@ -37,25 +37,22 @@ class camere
     private $tipocamera;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="fotocamera", type="string", length=255)
+     * @var \Application\Sonata\MediaBundle\Entity\Media
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, fetch="LAZY")
      */
-    private $fotocamera;
+    protected $media1;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="fotocamera1", type="string", length=255)
+     * @var \Application\Sonata\MediaBundle\Entity\Media
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, fetch="LAZY")
      */
-    private $fotocamera1;
+    protected $media2;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="fotocamera2", type="string", length=255)
+     * @var \Application\Sonata\MediaBundle\Entity\Media
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, fetch="LAZY")
      */
-    private $fotocamera2;
+    protected $media3;
     
     /**
      * @var \Application\Sonata\MediaBundle\Entity\Media
@@ -121,72 +118,51 @@ class camere
     }
 
     /**
-     * Set fotocamera
-     *
-     * @param string $fotocamera
-     * @return camere
+     * @param MediaInterface $media1
      */
-    public function setFotocamera($fotocamera)
+    public function setMedia1(MediaInterface $media1)
     {
-        $this->fotocamera = $fotocamera;
-
-        return $this;
+        $this->media1 = $media1;
     }
 
     /**
-     * Get fotocamera
-     *
-     * @return string 
+     * @return MediaInterface
      */
-    public function getFotocamera()
+    public function getMedia1()
     {
-        return $this->fotocamera;
+        return $this->media1;
     }
 
     /**
-     * Set fotocamera1
-     *
-     * @param string $fotocamera1
-     * @return camere
+     * @param MediaInterface $media2
      */
-    public function setFotocamera1($fotocamera1)
+    public function setMedia2(MediaInterface $media2)
     {
-        $this->fotocamera1 = $fotocamera1;
-
-        return $this;
+        $this->media2 = $media2;
     }
 
     /**
-     * Get fotocamera1
-     *
-     * @return string 
+     * @return MediaInterface
      */
-    public function getFotocamera1()
+    public function getMedia2()
     {
-        return $this->fotocamera1;
+        return $this->media2;
+    }
+    
+        /**
+     * @param MediaInterface $media3
+     */
+    public function setMedia3(MediaInterface $media3)
+    {
+        $this->media3 = $media3;
     }
 
     /**
-     * Set fotocamera2
-     *
-     * @param string $fotocamera2
-     * @return camere
+     * @return MediaInterface
      */
-    public function setFotocamera2($fotocamera2)
+    public function getMedia3()
     {
-        $this->fotocamera2 = $fotocamera2;
-
-        return $this;
-    }
-
-    /**
-     * Get fotocamera2
-     *
-     * @return string 
-     */
-    public function getFotocamera2()
-    {
-        return $this->fotocamera2;
+        return $this->media3;
     }
     
     /**

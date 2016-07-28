@@ -48,6 +48,7 @@ sonata_media:
         camere:
             providers:
                 - sonata.media.provider.image
+                - sonata.media.provider.youtube
 
             formats:
                 preview:   { width: 100, quality: 100}
