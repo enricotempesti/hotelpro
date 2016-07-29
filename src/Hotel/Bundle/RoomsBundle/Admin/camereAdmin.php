@@ -19,7 +19,7 @@ class camereAdmin extends Admin
             ->add('id')
             ->add('numerocamera')
             ->add('tipocamera')
-            ->add('media')
+            ->add('media' )
             ->add('media1')
             ->add('media2')
             ->add('media3')
@@ -55,26 +55,41 @@ class camereAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+      
         $formMapper
             ->add('numerocamera')
             ->add('tipocamera')
             ->add('media', 'sonata_media_type', array(
+                 'label'=> 'carica immagine 1',
                  'provider' => 'sonata.media.provider.image',
                  'context'  => 'camere'
             ))
             ->add('media1', 'sonata_media_type', array(
+                 'label'=> 'carica immagine 2',
                  'provider' => 'sonata.media.provider.image',
                  'context'  => 'camere'
             ))
+                
             ->add('media2', 'sonata_media_type', array(
+                 'label'=> 'carica immagine 3',
                  'provider' => 'sonata.media.provider.image',
                  'context'  => 'camere'
             ))
             ->add('media3', 'sonata_media_type', array(
+                 'label'=> 'inserisci url video youtube 1',
                  'provider' => 'sonata.media.provider.youtube',
                  'context'  => 'camere'
-            ))    
+            ))
+          
         ;
+            $formMapper->get('media')->add('unlink', 'hidden', ['mapped' => false, 'data' => false]) 
+                       ->add('binaryContent', 'file', ['label' => false]);
+            $formMapper->get('media1')->add('unlink', 'hidden', ['mapped' => false, 'data' => false])
+                       ->add('binaryContent', 'file', ['label' => false]); 
+            $formMapper->get('media2')->add('unlink', 'hidden', ['mapped' => false, 'data' => false])
+                       ->add('binaryContent', 'file', ['label' => false]);
+            $formMapper->get('media3')->add('unlink', 'hidden', ['mapped' => false, 'data' => false])
+                       ->add('binaryContent', 'url', ['label' => false]); 
     }
 
     /**
@@ -86,10 +101,10 @@ class camereAdmin extends Admin
             ->add('id')
             ->add('numerocamera')
             ->add('tipocamera')
-            ->add('media')
-            ->add('media1')
-            ->add('media2')
-            ->add('media3')
+            ->add('media' ,'null', array( 'label'=> ' immagine 1',))
+            ->add('media1' ,'null', array( 'label'=> ' immagine 2',))
+            ->add('media2' ,'null', array( 'label'=> ' immagine 3',))
+            ->add('media3' ,'null', array( 'label'=> ' video 1',))
         ;
     }
 }
